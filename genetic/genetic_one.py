@@ -206,6 +206,8 @@ class Gen1:
         if initial_generation == 0:
             self.actual_generation = self.first_generation()
 
+        new_generation = self.actual_generation
+
         for e in range(nr_epochs):
             print("Epochs {}/{}".format(e, nr_epochs))
             if history:

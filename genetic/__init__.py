@@ -1,4 +1,4 @@
 """
 This module contains different variations of genetic algorithms.
 """
-from reproduction import Gen1
+from genetic_one import Gen1
