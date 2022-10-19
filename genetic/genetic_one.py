@@ -11,6 +11,14 @@ a = 50
 X =[i for i in range(-a,a)]
 Y =[function_a([x]) for x in X]
 
+model_pars = {'cell_split_number': 5, 'subjects_in_cell': 2,
+              'nr_clones': 5, 'mutation_gaussian_sd': 2,
+              'pins': 9,'gene_quality': 1,}
+input_size = 1 # since our function has one variable this is a trivial scenario.
+bounds =[[-a,a]] # searching intervals for the solution
+
+# Experiment
+experiment = Gen1(function_a ,input_size, bounds, model_par)
 nr_epochs = 20
 last_generation = experiment.evolve(nr_epochs)
 fit = [function_a(x) for x in last_generation]
@@ -20,9 +28,6 @@ plt.legend()
 
 plt.plot(X,Y)
 
-model_pars = {'cell_split_number': 5, 'subjects_in_cell': 2,
-              'nr_clones': 5, 'mutation_gaussian_sd': 2,
-              'pins': 9,'gene_quality': 1,}
 ##
 """
 
